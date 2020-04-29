@@ -1,23 +1,23 @@
 # Occupy hand signals for Google Meet
 
+![version](https://img.shields.io/chrome-web-store/v/npkagcojnlkccpdcgokfijkbhmlkglnl)
+![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/LeePorte/hand-signals)
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/jamieecarr/nod)
-
-Chrome extension for Google Meet allowing quick reactions for muted team members.
+Chrome extension for Google Meet enabling Occupy hand signals.
 
 ---
 
 ## Install
 
-[Install from Chrome Store](https://chrome.google.com/webstore/detail/nod-for-google-meet/oikgofeboedgfkaacpfepbfmgdalabej)
+[Install from Chrome Store](https://chrome.google.com/webstore/detail/hand-signals-hand-signals/npkagcojnlkccpdcgokfijkbhmlkglnl)
 
 ## Description
 
-When running larger meetings in Google Meet, it can be difficult to gauge real-time feedback as you are speaking.
+When running meetings in real life or virtually, it can be hard to gain consensus quickly. Especially if participants don’t have their video on or are muted. This is where the [Occupy Hand signals](https://en.wikipedia.org/wiki/Occupy_movement_hand_signals) come in. 
 
-A simple nod in a meeting is something we take for granted but with many team members muted or observing silently, getting this type of feedback can be tough.
+AS a member of GDS PaaS team we have used the [hand signals in person](https://gds.blog.gov.uk/2016/10/07/platform-as-a-service-team-takes-even-handed-approach-to-meetings/) for a long time. However due to Covid-19 and being fully remote this has proven harder to transfer into virtual meetings, often due to network connectivity constraints needing individuals to turn off their cameras.
 
-Hand signals allows team members to send real-time reactions to presenters and speakers during meetings on Google Meet.
+Hand signals enables us to continue using our team’s method of communication during meetings on Google Meet.
 
 ## Contributing
 
@@ -27,6 +27,8 @@ Hand signals allows team members to send real-time reactions to presenters and s
 4.  Push to the branch (`git push origin my-new-feature`)
 5.  Create new Pull Request
 
-## 
+## Attributions  
 
 Forked from https://github.com/jamieecarr/nod and adapted to our non revenue generating needs
+
+
