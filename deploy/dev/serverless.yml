@@ -1,0 +1,51 @@
+connectionTable:
+  component: "@serverless/aws-dynamodb"
+  inputs:
+    name: hand-signals-connections-dev
+    attributeDefinitions:
+      - AttributeName: connectionID
+        AttributeType: S
+      - AttributeName: meetingID
+        AttributeType: S
+    keySchema:
+      - AttributeName: connectionID
+        KeyType: HASH
+      - AttributeName: meetingID
+        KeyType: RANGE
+    globalSecondaryIndexes:
+      - IndexName: meetingIndex
+        KeySchema:
+          - AttributeName: meetingID
+            KeyType: HASH
+          - AttributeName: connectionID
+            KeyType: RANGE
+        Projection:
+          ProjectionType: "KEYS_ONLY"
+    region: eu-west-2
+
+teamsTable:
+  component: "@serverless/aws-dynamodb"
+  inputs:
+    name: hand-signals-teams-dev
+    attributeDefinitions:
+      - AttributeName: teamName
+        AttributeType: S
+    keySchema:
+      - AttributeName: teamName
+        KeyType: HASH
+    region: eu-west-2
+
+websocketApi:
+  component: "@serverless/backend-socket"
+  inputs:
+    name: hand-signals-websocket-dev
+    stage: dev
+    description: Hand Signals - dev websocket
+    region: eu-west-2
+    memory: 128
+    timeout: 10
+    env:
+      connectionDb: ${connectionTable.name}
+      teamsDb: ${teamsTable.name}
+    code:
+      src: ../../backend/socket
