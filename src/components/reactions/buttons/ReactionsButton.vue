@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     getHand() {
-      return `chrome-extension://${this.$store.state.extensionID}/img/speak.png`;
+      return `chrome-extension://${this.$store.state.extensionID}/img/dropdown.png`;
     },
     getUsername() {
       if (this.$store.state.isFullName) {
