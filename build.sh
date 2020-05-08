@@ -2,6 +2,9 @@
 
 npm run build
 
+rm hand-signals.zip
+rm hand-signals-firefox.zip
+
 zip -r -FS hand-signals.zip extension
 
 cp -R extension extension-ff
