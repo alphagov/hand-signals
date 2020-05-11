@@ -25,15 +25,6 @@ export default {
     trayOpen() {
       return this.$store.state.reactions || this.$store.state.settings;
     }
-  },
-
-  created: function() {
-    const tone = localStorage.getItem("nod-skinTone");
-    if (tone) {
-      this.$store.dispatch("setTone", parseInt(tone));
-    } else {
-      localStorage.setItem("nod-skinTone", 0);
-    }
   }
 };
 </script>

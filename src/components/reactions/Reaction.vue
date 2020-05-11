@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown-outer" @click="sendMessage(emoji)" @keyup.enter="sendMessage(emoji)" tabindex="0" :aria-label="label" role="button">
     <div class="dropdown-item" tabindex="-1" :class="{ faded: !canPost }">
-      <img class="emoji" :src="getImg" :alt="getLabel"/>
+      <img class="emoji" :src="getEncoded" :alt="getLabel"/>
       <span class="tooltiptext">{{ getLabel }}</span>
     </div>
   </div>
@@ -12,7 +12,7 @@ import { generateUUID } from "../../utils/index";
 
 export default {
   props: {
-    emoji: String,
+    encoded: String,
     text: String,
     label: String
   },
@@ -21,8 +21,8 @@ export default {
     canPost() {
       return this.$store.state.messages.filter((h) => h.owner === true).length < 1;
     },
-    getImg() {
-      return `chrome-extension://${this.$store.state.extensionID}/img/${this.emoji}.png`;
+    getEncoded() {
+          return `${this.encoded}`;
     },
     getLabel() {
           return `${this.label}`;
@@ -41,7 +41,7 @@ export default {
       if (this.canPost) {
         this.$store.dispatch("addMessage", {
           messageId: generateUUID(),
-          emoji: emoji,
+          encoded: this.getEncoded,
           username: this.getUsername,
           img: this.$store.getters.getUser("avatar"),
           owner: true,
@@ -51,14 +51,10 @@ export default {
           action: "MESSAGE",
           message: {
             id: this.$store.getters.getUser("meetingID"),
-            emoji: emoji,
+            encoded: this.getEncoded,
             username: this.getUsername,
             img: this.$store.getters.getUser("avatar"),
           },
-        });
-        this.$gtag.event("click", {
-          event_category: "Reactions",
-          event_label: emoji,
         });
       }
     },
