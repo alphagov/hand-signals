@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     // TODO - SWITCH BACK TO PROD
-    extensionID: "npkagcojnlkccpdcgokfijkbhmlkglnl", //PROD: oikgofeboedgfkaacpfepbfmgdalabej / DEV: cpdaoleiojomipifgjmkjjkmfecanfdo
+    extensionID: "npkagcojnlkccpdcgokfijkbhmlkglnl", //PROD: npkagcojnlkccpdcgokfijkbhmlkglnl
     userData: {},
     messages: [],
     hands: [],
@@ -16,7 +16,6 @@ export default new Vuex.Store({
     updateChecked: false,
     visible: true,
     isFullName: false,
-    tone: 0,
   },
 
   getters: {
@@ -56,9 +55,6 @@ export default new Vuex.Store({
     setVisible(state, boolean) {
       state.visible = boolean;
     },
-    setTone(state, int) {
-      state.tone = int;
-    },
     setFullName(state, boolean) {
       state.isFullName = boolean;
     },
@@ -97,9 +93,6 @@ export default new Vuex.Store({
     },
     setVisible(context, boolean) {
       context.commit("setVisible", boolean);
-    },
-    setTone(context, int) {
-      context.commit("setTone", int);
     },
     setFullName(context, boolean) {
       context.commit("setFullName", boolean);

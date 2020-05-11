@@ -12,13 +12,14 @@
 export default {
   computed: {
     getEmoji() {
-      return `chrome-extension://${this.$store.state.extensionID}/img/${this.emoji}.png`;
+      return `${this.encoded}`;
     }
   },
 
   props: {
     username: String,
     emoji: String,
+    encoded: String,
     img: String
   }
 };

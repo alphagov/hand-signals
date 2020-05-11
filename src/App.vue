@@ -67,7 +67,7 @@ export default {
 
       // Send ping to keep socket connection open
       const ping = () => {
-        console.log("Keeping Nod alive...");
+        console.log("Keeping Hand signals alive...");
         this.$socket.sendObj({ route: "ping" });
       };
 
