@@ -9,7 +9,7 @@
       "js": ["inject.js"]
     }
   ],
-  "web_accessible_resources": ["content.js", "dist/*", "img/*"],
+  "web_accessible_resources": ["content.js", "dist/*"],
   "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
   "background": {
     "scripts": ["background.js"]

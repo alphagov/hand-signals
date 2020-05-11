@@ -1,6 +1,5 @@
 <template>
   <div class="explainer">
-    <img :src="notificationImg" style="width: 200px;" />
     <div class="explainer-body">
       <div class="nod-pill">New</div>
       <div class="explainer-title"><b>Notifications</b></div>
@@ -8,16 +7,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  computed: {
-    notificationImg() {
-      return `chrome-extension://${this.$store.state.extensionID}/img/notification.png`;
-    }
-  }
-};
-</script>
 
 <style lang="scss" scoped>
 .explainer {
