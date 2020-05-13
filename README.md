@@ -14,6 +14,24 @@ Chrome and Firefox extension for Google Meet enabling Occupy hand signals.
 
 [Install from Mozilla Addons](https://addons.mozilla.org/en-GB/firefox/addon/hand-signals-for-google-meet/)
 
+## Images of the plugin
+
+![](img/readme/reaction-out.png)
+
+All the Occupy Hand Signals are available
+
+![](img/readme/reaction-in.png)
+
+Unobtrusive when you aren't interacting with it
+
+![](img/readme/action.png)
+
+Overlays the feed from your team on the video call
+
+![](img/readme/notification.png)
+
+Get notifications when you're in presenter view
+
 ## Description
 
 When running meetings in real life or virtually, it can be hard to gain consensus quickly. Especially if participants don’t have their video on or are muted. This is where the [Occupy Hand signals](https://en.wikipedia.org/wiki/Occupy_movement_hand_signals) come in. 
