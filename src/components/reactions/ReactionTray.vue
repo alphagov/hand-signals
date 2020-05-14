@@ -3,6 +3,8 @@
     <div class="tray-inner" :class="{ open: trayOpen }">
       <ReactionsButton />
       <div class="divider"></div>
+      <ResponseButton />
+      <div class="divider"></div>
       <HandUpButton />
       <div class="divider"></div>
       <SettingsButton />
@@ -12,12 +14,14 @@
 
 <script>
 import HandUpButton from "./buttons/HandUpButton";
+import ResponseButton from "./buttons/ResponseButton";
 import ReactionsButton from "./buttons/ReactionsButton";
 import SettingsButton from "./buttons/SettingsButton";
 
 export default {
   components: {
     HandUpButton,
+    ResponseButton,
     ReactionsButton,
     SettingsButton
   },
