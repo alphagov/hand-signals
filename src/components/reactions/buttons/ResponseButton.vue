@@ -3,6 +3,7 @@
     <a class="tray-button" tabindex="-1" aria-label="Respond to a point" role="button">
       <div class="tray-button-bg"></div>
       <img :src="getResponse" style="height: 32px;" alt="I want to respond"/>
+      <span class="tooltiptext">I want to respond</span>
     </a>
   </div>
 </template>

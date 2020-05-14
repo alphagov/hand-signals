@@ -3,6 +3,7 @@
     <a class="tray-button" tabindex="-1" aria-label="I agree" role="button">
       <div class="tray-button-bg"></div>
       <img :src="getAgree" style="height: 32px;" alt="I agree"/>
+      <span class="tooltiptext">I agree</span>
     </a>
   </div>
 </template>
