@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .dropdown-outer {
-  flex-basis: 33%;
+  flex-basis: 25%;
   flex-shrink: 0;
   &:focus > .dropdown-item {
     background-color: rgba(2, 191, 165, 0.15);
@@ -110,8 +110,8 @@ export default {
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  top: -5px;
-  left: 105%;
+  bottom: -100px;
+  left: 0%;
 }
 
 .dropdown-item:hover .tooltiptext {
