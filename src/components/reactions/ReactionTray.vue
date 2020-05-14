@@ -7,6 +7,10 @@
       <div class="divider"></div>
       <HandUpButton />
       <div class="divider"></div>
+      <AgreeButton />
+      <div class="divider"></div>
+      <DisagreeButton />
+      <div class="divider"></div>
       <SettingsButton />
     </div>
   </div>
@@ -16,6 +20,8 @@
 import HandUpButton from "./buttons/HandUpButton";
 import ResponseButton from "./buttons/ResponseButton";
 import ReactionsButton from "./buttons/ReactionsButton";
+import AgreeButton from "./buttons/AgreeButton";
+import DisagreeButton from "./buttons/DisagreeButton";
 import SettingsButton from "./buttons/SettingsButton";
 
 export default {
@@ -23,6 +29,8 @@ export default {
     HandUpButton,
     ResponseButton,
     ReactionsButton,
+    AgreeButton,
+    DisagreeButton,
     SettingsButton
   },
   computed: {
