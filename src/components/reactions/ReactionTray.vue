@@ -82,6 +82,22 @@ export default {
   width: 1px;
 }
 
+.tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #cdcdcd;
+  color: #000000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: -100px;
+  left: 0%;
+}
+
 .open {
   border-radius: 0;
 }
@@ -123,6 +139,53 @@ export default {
 
   &:hover {
     background-color: transparent;
+    .tray-button-bg {
+      opacity: 0.04;
+    }
+  }
+
+  &:hover .tooltiptext {
+    visibility: visible;
+  }
+}
+
+.dropdown-trigger-button {
+  display: flex;
+  overflow: visible !important;
+  padding: 0 10px;
+
+  -webkit-box-align: center;
+  box-align: center;
+  align-items: center;
+  box-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 0;
+  color: #5f6368;
+  height: 100%;
+  min-width: 66px;
+
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  transition: background 0.2s 0.1s;
+  border: 0;
+  cursor: pointer;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  line-height: 36px;
+  text-decoration: none;
+  text-transform: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 0;
+
+  &:hover {
+     background-color: transparent;
     .tray-button-bg {
       opacity: 0.04;
     }

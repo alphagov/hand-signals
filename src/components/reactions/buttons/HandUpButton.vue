@@ -3,6 +3,7 @@
     <a class="tray-button" tabindex="-1" aria-label="Raise your hand" role="button">
       <div class="tray-button-bg"></div>
       <img :src="getHand" style="height: 32px;" alt="I want to speak"/>
+      <span class="tooltiptext">I want to speak</span>
     </a>
   </div>
 </template>

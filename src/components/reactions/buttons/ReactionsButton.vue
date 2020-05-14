@@ -1,6 +1,6 @@
 <template>
   <div id="nodBtn" class="tray-button-outer" tabindex="0" @mouseover="openReactions" @mouseleave="closeReactions" @keyup.enter="openReactions" @keyup.esc="closeReactions">
-    <a class="tray-button" tabindex="-1" aria-label="Open Nod extension" role="button">
+    <a class="dropdown-trigger-button" tabindex="-1" aria-label="Open Nod extension" role="button">
       <div class="tray-button-bg"></div>
       <img :src="getDropdown" style="height: 42px;" />
       <ReactionsDropdown v-if="this.$store.state.reactions" />
