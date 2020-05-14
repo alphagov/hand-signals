@@ -10,6 +10,7 @@ export default new Vuex.Store({
     userData: {},
     messages: [],
     hands: [],
+    response: [],
     reactions: false,
     settings: false,
     updateAvailable: false,
@@ -36,6 +37,12 @@ export default new Vuex.Store({
     },
     removeHand(state, id) {
       state.hands = state.hands.filter((hand) => hand.messageId != id);
+    },
+    addRespond(state, data) {
+      state.response.unshift(data);
+    },
+    removeRespond(state, id) {
+      state.response = state.response.filter((respond) => respond.messageId != id);
     },
     addUserData(state, data) {
       state.userData = data;
@@ -74,6 +81,14 @@ export default new Vuex.Store({
 
     removeHand(context, id) {
       context.commit("removeHand", id);
+    },
+
+    addRespond(context, messageData) {
+      context.commit("addRespond", messageData);
+    },
+
+    removeRespond(context, id) {
+      context.commit("removeRespond", id);
     },
 
     openDropdown(context, dropdown) {

@@ -3,6 +3,7 @@
     <transition-group name="fading" class="nod-message-wrapper">
       <Message v-for="msg in messages" :key="msg.messageId" :encoded="msg.encoded" :username="msg.username" :img="msg.img" />
       <Hand v-for="hand in hands" :key="hand.messageId" :username="hand.username" :img="hand.img" :messageId="hand.messageId" />
+      <Response v-for="response in responses" :key="response.messageId" :username="response.username" :img="response.img" :messageId="response.messageId" />
     </transition-group>
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
 import Message from "./Message";
 import Hand from "./Speak";
+import Response from "./Respond";
 import { generateUUID, sendNotification } from "../../utils";
 
 export default {
   components: {
     Message,
-    Hand
+    Hand,
+    Response
   },
   computed: {
     messages() {
@@ -23,6 +26,9 @@ export default {
     },
     hands() {
       return this.$store.state.hands;
+    },
+    responses() {
+      return this.$store.state.response;
     }
   },
   created: function() {
