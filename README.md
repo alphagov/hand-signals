@@ -36,7 +36,7 @@ Get notifications when you're in presenter view
 
 When running meetings in real life or virtually, it can be hard to gain consensus quickly. Especially if participants don’t have their video on or are muted. This is where the [Occupy Hand signals](https://en.wikipedia.org/wiki/Occupy_movement_hand_signals) come in. 
 
-AS a member of GDS PaaS team we have used the [hand signals in person](https://gds.blog.gov.uk/2016/10/07/platform-as-a-service-team-takes-even-handed-approach-to-meetings/) for a long time. However due to Covid-19 and being fully remote this has proven harder to transfer into virtual meetings, often due to network connectivity constraints needing individuals to turn off their cameras.
+As a member of GDS PaaS team we have used the [hand signals in person](https://gds.blog.gov.uk/2016/10/07/platform-as-a-service-team-takes-even-handed-approach-to-meetings/) for a long time. However due to Covid-19 and being fully remote this has proven harder to transfer into virtual meetings, often due to network connectivity constraints needing individuals to turn off their cameras.
 
 Hand signals enables us to continue using our team’s method of communication during meetings on Google Meet.
 
