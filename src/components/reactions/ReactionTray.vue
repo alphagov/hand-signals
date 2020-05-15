@@ -94,7 +94,7 @@ export default {
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  bottom: -100px;
+  bottom: -55px;
   left: 0%;
 }
 
