@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Hand Signals - Hand signals for Google Meet",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Quick Occupy hand signals for use in Google Meet",
   "content_scripts": [
     {
