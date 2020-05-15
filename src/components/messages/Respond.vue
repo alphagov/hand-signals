@@ -41,7 +41,7 @@ export default {
       this.$store.dispatch("removeRespond", key);
       // Send one over the websocket to other users
       this.$socket.sendObj({
-        action: "REMOVE",
+        action: "REMOVERESPONSE",
         message: {
           id: this.$store.getters.getUser("meetingID"),
           messageId: key
