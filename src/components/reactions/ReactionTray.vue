@@ -99,7 +99,7 @@ export default {
 }
 
 .open {
-  border-radius: 0;
+  border-radius: 0 0 8px;
 }
 
 .tray-button {
