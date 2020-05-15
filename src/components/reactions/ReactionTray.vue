@@ -1,6 +1,8 @@
 <template>
   <div class="main-tray">
     <div class="tray-inner" :class="{ open: trayOpen }">
+      <SettingsButton />
+      <div class="divider"></div>
       <ReactionsButton />
       <div class="divider"></div>
       <ResponseButton />
@@ -10,8 +12,6 @@
       <AgreeButton />
       <div class="divider"></div>
       <DisagreeButton />
-      <div class="divider"></div>
-      <SettingsButton />
     </div>
   </div>
 </template>
