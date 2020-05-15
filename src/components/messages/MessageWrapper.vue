@@ -45,6 +45,7 @@ export default {
             owner: false
           });
           break;
+          
         case "QUEUEHAND":
           this.$store.dispatch("addHand", {
             messageId: d.message.messageId,
@@ -53,7 +54,20 @@ export default {
             img: d.message.img,
             owner: false
           });
+
+          if (this.$store.state.visible == false && localStorage.getItem("notificationStatus") == "true") {
+            chrome.runtime.sendMessage(this.$store.state.extensionID, {
+              type: "displayNotification",
+              options: {
+                title: "Notification from Hand signals",
+                message: d.message.username,
+                iconUrl: d.message.encoded,
+                type: "basic"
+              }
+            });
+          }
           break;
+
         case "RESPONDQUEUE":
           this.$store.dispatch("addRespond", {
             messageId: d.message.messageId,
