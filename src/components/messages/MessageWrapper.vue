@@ -45,7 +45,7 @@ export default {
             owner: false
           });
           break;
-        case "QUEUE":
+        case "QUEUEHAND":
           this.$store.dispatch("addHand", {
             messageId: d.message.messageId,
             username: d.message.username,
@@ -75,8 +75,11 @@ export default {
             });
           }
           break;
-        case "REMOVE":
+        case "REMOVEHAND":
           this.$store.dispatch("removeHand", d.message.messageId);
+          break;
+        case "REMOVERESPONSE":
+          this.$store.dispatch("removeRespond", d.message.messageId);
           break;
       }
     };

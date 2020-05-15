@@ -44,7 +44,7 @@ export default {
         });
         // Send one over the websocket to other users
         this.$socket.sendObj({
-          action: "QUEUE",
+          action: "QUEUEHAND",
           message: {
             id: this.$store.getters.getUser("meetingID"),
             emoji: "hand",
