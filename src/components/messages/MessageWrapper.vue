@@ -53,7 +53,7 @@ export default {
             img: d.message.img,
             owner: false
           });
-
+          break;
         case "RESPONDQUEUE":
           this.$store.dispatch("addRespond", {
             messageId: d.message.messageId,
