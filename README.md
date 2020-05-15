@@ -32,6 +32,11 @@ Overlays the feed from your team on the video call
 
 Get notifications when you're in presenter view
 
+![](img/readme/tooltip.png)
+
+Tooltips to help when you're not sure of the signs
+
+
 ## Description
 
 When running meetings in real life or virtually, it can be hard to gain consensus quickly. Especially if participants don’t have their video on or are muted. This is where the [Occupy Hand signals](https://en.wikipedia.org/wiki/Occupy_movement_hand_signals) come in. 
