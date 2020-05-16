@@ -11,7 +11,7 @@
 .explainer {
   position: absolute;
   left: 270px;
-  top: -40px;
+  top: 10px;
   background-color: white;
   border-radius: 5px;
   overflow: hidden;
@@ -26,7 +26,7 @@
 }
 
 .explainer-title {
-  margin-top: 0;
+  margin-top: 10px;
   font-size: 16px;
   color: #202124;
   margin-bottom: 5px;
