@@ -9,7 +9,7 @@
     "deploy-prod": "cd deploy/prod && serverless"
   },
   "dependencies": {
-    "npm": "^6.14.5",
+    "npm": "^6.14.6",
     "vue": "^2.6.11",
     "vue-gtag": "^1.6.2",
     "vue-native-websocket": "^2.0.14",
