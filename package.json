@@ -1,6 +1,6 @@
 {
   "name": "handsignals",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "private": true,
   "scripts": {
     "watch": "vue-cli-service build --dest extension/dist --watch",
@@ -9,17 +9,18 @@
     "deploy-prod": "cd deploy/prod && serverless"
   },
   "dependencies": {
-    "npm": "^6.14.6",
-    "vue": "^2.6.11",
-    "vue-gtag": "^1.8.0",
+    "npm": "^6.14.8",
+    "serverless": "^1.80.0",
+    "vue": "^2.6.12",
     "vue-native-websocket": "^2.0.14",
     "vuex": "^3.5.1"
   },
   "devDependencies": {
-    "@vue/cli-service": "^4.5.3",
+    "@vue/cli-service": "^4.5.4",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.3",
-    "vue-template-compiler": "^2.6.11"
+    "webpack": "^4.44.1",
+    "vue-template-compiler": "^2.6.12"
   },
   "browserslist": [
     "> 1%",

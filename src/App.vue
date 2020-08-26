@@ -8,7 +8,7 @@
 <script>
 import ReactionTray from "./components/reactions/ReactionTray.vue";
 import MessageWrapper from "./components/messages/MessageWrapper.vue";
-import { contains, waitForElement } from "./utils";
+import { contains } from "./utils";
 
 export default {
   name: "App",
@@ -32,7 +32,7 @@ export default {
   methods: {
     getData() {
       const dataScript = contains("script", "ds:7");
-      const userData = JSON.parse(dataScript[1].text.match(/\[[^\}]*/)[0]);
+      const userData = JSON.parse(dataScript[1].text.match(/\[[^\}]*\]/)[0]);
 
       let data = {
         meetingID: document.querySelector("[data-unresolved-meeting-id]").getAttribute("data-unresolved-meeting-id"),
@@ -54,11 +54,11 @@ export default {
 
       // send join message to websocket
       this.$socket.sendObj({
-        route: "join",
+        route: 'join',
         data: {
           id: this.$store.getters.getUser("meetingID"),
-          team: this.$store.getters.getUser("team"),
-        },
+          team: this.$store.getters.getUser("team")
+        }
       });
 
       // Send console message
@@ -105,7 +105,7 @@ export default {
       window.addEventListener("beforeunload", (event) => {
         this.$socket.sendObj({
           route: "disconnect",
-          data: { id: this.$store.getters.getUser("meetingID") },
+          data: { id: this.$store.getters.getUser("meetingID") }
         });
       });
 
@@ -115,8 +115,8 @@ export default {
       }
       this.loaded = false;
       this.$socket.sendObj({
-        route: "disconnect",
-        data: { id: this.$store.getters.getUser("meetingID") },
+        route: 'disconnect',
+        data: { id: this.$store.getters.getUser("meetingID") }
       });
       this.$socket.close();
     },

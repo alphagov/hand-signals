@@ -6,7 +6,9 @@ import store from "./store/store";
 Vue.config.productionTip = false;
 
 Vue.use(VueNativeSock, "wss://aqr57o3uuk.execute-api.eu-west-2.amazonaws.com/prod", {
-  format: "json"
+  format: "json",
+  reconnection: true,
+  reconnectionDelay: 3000
 });
 
 new Vue({

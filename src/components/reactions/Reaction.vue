@@ -44,7 +44,7 @@ export default {
           encoded: this.getEncoded,
           username: this.getUsername,
           img: this.$store.getters.getUser("avatar"),
-          owner: true,
+          owner: true
         });
 
         this.$socket.sendObj({
@@ -53,7 +53,7 @@ export default {
             id: this.$store.getters.getUser("meetingID"),
             encoded: this.getEncoded,
             username: this.getUsername,
-            img: this.$store.getters.getUser("avatar"),
+            img: this.$store.getters.getUser("avatar")
           },
         });
       }

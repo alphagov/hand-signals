@@ -34,10 +34,10 @@
 export default {
   computed: {
     updateAvailable() {
-      return this.$store.state.updateAvailable == true && this.$store.state.updateChecked;
+      return this.$store.state.updateAvailable === true && this.$store.state.updateChecked;
     },
     noUpdateAvailable() {
-      return this.$store.state.updateAvailable == false && this.$store.state.updateChecked;
+      return this.$store.state.updateAvailable === false && this.$store.state.updateChecked;
     },
   },
   methods: {

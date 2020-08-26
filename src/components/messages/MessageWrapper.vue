@@ -55,7 +55,7 @@ export default {
             owner: false
           });
 
-          if (this.$store.state.visible == false && localStorage.getItem("notificationStatus") == "true") {
+          if (this.$store.state.visible === false && localStorage.getItem("notificationStatus") === "true") {
             chrome.runtime.sendMessage(this.$store.state.extensionID, {
               type: "displayNotification",
               options: {
@@ -77,7 +77,7 @@ export default {
             owner: false
           });
 
-          if (this.$store.state.visible == false && localStorage.getItem("notificationStatus") == "true") {
+          if (this.$store.state.visible === false && localStorage.getItem("notificationStatus") === "true") {
             chrome.runtime.sendMessage(this.$store.state.extensionID, {
               type: "displayNotification",
               options: {

@@ -1,3 +1,4 @@
+/*global on*/
 const AWS = require("aws-sdk");
 AWS.config.update({ region: process.env.AWS_REGION });
 const DDB = new AWS.DynamoDB({ apiVersion: "2012-10-08" });
@@ -70,7 +71,7 @@ on("default", async (data, socket) => {
         ":meetingID": parsedData.message.id
       }
     }).promise();
-    const connections = connectionData.Items.filter(item => item.connectionID != socket.id);
+    const connections = connectionData.Items.filter(item => item.connectionID !== socket.id);
     for (let { connectionID } of connections) {
       try {
         await socket.send(data, connectionID);
