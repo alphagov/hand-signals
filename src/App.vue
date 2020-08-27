@@ -32,7 +32,7 @@ export default {
   methods: {
     getData() {
       const dataScript = contains("script", "ds:7");
-      const userData = JSON.parse(dataScript[1].text.match(/\[[^\}]*\]/)[0]);
+      const userData = JSON.parse(dataScript[1].text.match(/\[[^]*\]/)[0]);
 
       let data = {
         meetingID: document.querySelector("[data-unresolved-meeting-id]").getAttribute("data-unresolved-meeting-id"),
