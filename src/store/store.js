@@ -16,6 +16,7 @@ export default new Vuex.Store({
     updateAvailable: false,
     updateChecked: false,
     visible: true,
+    minimised: false,
     isFullName: false,
   },
 
@@ -58,6 +59,9 @@ export default new Vuex.Store({
     },
     setUpdateChecked(state, boolean) {
       state.updateChecked = boolean;
+    },
+    setMinimised(state, boolean) {
+      state.minimised = boolean;
     },
     setVisible(state, boolean) {
       state.visible = boolean;
@@ -105,6 +109,9 @@ export default new Vuex.Store({
     },
     setUpdateChecked(context, boolean) {
       context.commit("setUpdateChecked", boolean);
+    },
+    setMinimised(context, boolean) {
+      context.commit("setMinimised", boolean);
     },
     setVisible(context, boolean) {
       context.commit("setVisible", boolean);
