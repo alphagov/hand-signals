@@ -1,6 +1,9 @@
 <template>
   <div class="main-tray">
-    <div class="tray-inner" :class="{ open: trayOpen }">
+    <MinimiseButton />
+    <div class="tray-inner"
+      v-bind:class="[{ open: trayOpen }, trayMimimised ]"
+    >
       <SettingsButton />
       <div class="divider"></div>
       <ReactionsButton />
@@ -17,6 +20,7 @@
 </template>
 
 <script>
+import MinimiseButton from "./buttons/MinimiseButton";
 import HandUpButton from "./buttons/HandUpButton";
 import ResponseButton from "./buttons/ResponseButton";
 import ReactionsButton from "./buttons/ReactionsButton";
@@ -26,6 +30,7 @@ import SettingsButton from "./buttons/SettingsButton";
 
 export default {
   components: {
+    MinimiseButton,
     HandUpButton,
     ResponseButton,
     ReactionsButton,
@@ -36,6 +41,9 @@ export default {
   computed: {
     trayOpen() {
       return this.$store.state.reactions || this.$store.state.settings;
+    },
+    trayMimimised: function() {
+      return this.$store.state.minimised ? 'tray-inner--minimised' : '';
     }
   }
 };
@@ -43,8 +51,8 @@ export default {
 
 <style lang="scss">
 .main-tray {
-  background-color: rgba(0, 0, 0, 0.541);
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
+  // background-color: rgba(0, 0, 0, 0.541);
+  // box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
   right: auto;
   animation-name: fade;
   animation-duration: 0.5s;
@@ -74,6 +82,12 @@ export default {
   background-color: #fff;
   display: flex;
   border-radius: 0 0 8px;
+  transition-duration: 0.25s;
+  transition-property: transform border-radius;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.tray-inner--minimised{ 
+  transform: translateX(-999px);
 }
 
 .divider {
