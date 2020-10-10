@@ -1,20 +1,20 @@
 <template>
   <div class="main-tray">
-    <MinimiseButton />
+    <MinimiseButton ref="minimiseBtn" />
     <div class="tray-inner"
       v-bind:class="[{ open: trayOpen }, trayMimimised ]"
     >
       <SettingsButton />
       <div class="divider"></div>
-      <ReactionsButton />
+      <OtherReactions ref="reactions" />
       <div class="divider"></div>
-      <ResponseButton />
+      <ResponseButton ref="respondBtn" />
       <div class="divider"></div>
-      <HandUpButton />
+      <HandUpButton ref="handUpBtn" />
       <div class="divider"></div>
-      <AgreeButton />
+      <AgreeButton ref="agreeBtn" />
       <div class="divider"></div>
-      <DisagreeButton />
+      <DisagreeButton ref="disAgreeBtn" />
     </div>
   </div>
 </template>
@@ -23,7 +23,7 @@
 import MinimiseButton from "./buttons/MinimiseButton";
 import HandUpButton from "./buttons/HandUpButton";
 import ResponseButton from "./buttons/ResponseButton";
-import ReactionsButton from "./buttons/ReactionsButton";
+import OtherReactions from "./OtherReactions";
 import AgreeButton from "./buttons/AgreeButton";
 import DisagreeButton from "./buttons/DisagreeButton";
 import SettingsButton from "./buttons/SettingsButton";
@@ -33,14 +33,57 @@ export default {
     MinimiseButton,
     HandUpButton,
     ResponseButton,
-    ReactionsButton,
+    OtherReactions,
     AgreeButton,
     DisagreeButton,
     SettingsButton
   },
+  mounted() {
+    this._keyListener = function(e) {
+      if (!e.ctrlKey) {
+        return false
+      } else {
+        switch(e.code) {
+          case 'KeyM':
+            this.$refs.minimiseBtn.toggleTrayVisibility()
+            break
+          case 'KeyH':
+            this.$refs.handUpBtn.sendHand()
+            break
+          case 'KeyA':
+            this.$refs.agreeBtn.sendMessage()
+            break
+           case 'KeyD':
+            this.$refs.disAgreeBtn.sendMessage()
+            break
+          case 'KeyR':
+            this.$refs.respondBtn.sendResponse()
+            break
+           case 'KeyC':
+            this.$refs.reactions.$refs.reactionClarify.sendMessage('clarify')
+            break
+          case 'KeyP':
+            this.$refs.reactions.$refs.reactionPoint.sendMessage('order')
+            break
+          case 'KeyB':
+            this.$refs.reactions.$refs.reactionBlock.sendMessage('block')
+            break
+          case 'KeyO':
+            this.$refs.reactions.$refs.reactionOppose.sendMessage('oppose')
+            break
+          default:
+            break
+        }
+      }
+    };
+    document.addEventListener('keydown', this._keyListener.bind(this));
+  },
+  beforeDestroy() {
+      document.removeEventListener('keydown', this._keyListener);
+  },
   computed: {
     trayOpen() {
-      return this.$store.state.reactions || this.$store.state.settings;
+      return this.$store.state.settings;
     },
     trayMimimised: function() {
       return this.$store.state.minimised ? 'tray-inner--minimised' : '';
@@ -51,8 +94,6 @@ export default {
 
 <style lang="scss">
 .main-tray {
-  // background-color: rgba(0, 0, 0, 0.541);
-  // box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
   right: auto;
   animation-name: fade;
   animation-duration: 0.5s;
@@ -66,7 +107,6 @@ export default {
   transition-duration: 0.25s;
   transition-property: opacity, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-  border-radius: 0 0 8px;
 }
 
 @keyframes fade {
@@ -85,6 +125,10 @@ export default {
   transition-duration: 0.25s;
   transition-property: transform border-radius;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+
+  .tray-button:last-of-type {
+    border-radius: 0 0 8px;
+  }
 }
 .tray-inner--minimised{ 
   transform: translateX(-999px);
@@ -98,7 +142,7 @@ export default {
 
 .tooltiptext {
   visibility: hidden;
-  width: 200px;
+  width: 250px;
   background-color: #cdcdcd;
   color: #000000;
   text-align: center;
@@ -109,7 +153,7 @@ export default {
   position: absolute;
   z-index: 1;
   bottom: -55px;
-  left: 0%;
+  left: -50px;
 }
 
 .open {
@@ -119,7 +163,7 @@ export default {
 .tray-button {
   display: flex;
   overflow: visible !important;
-  padding: 0 10px;
+  padding: 0;
 
   -webkit-box-align: center;
   box-align: center;
@@ -129,6 +173,7 @@ export default {
   justify-content: center;
   border-radius: 0;
   color: #5f6368;
+  background: #fff;
   height: 100%;
   min-width: 66px;
 
@@ -151,58 +196,13 @@ export default {
   -webkit-tap-highlight-color: transparent;
   z-index: 0;
 
-  &:hover {
-    background-color: transparent;
-    .tray-button-bg {
-      opacity: 0.04;
-    }
+  &:hover,
+  &:focus {
+     background-color: rgb(219, 241, 237);
   }
 
   &:hover .tooltiptext {
     visibility: visible;
-  }
-}
-
-.dropdown-trigger-button {
-  display: flex;
-  overflow: visible !important;
-  padding: 0 10px;
-
-  -webkit-box-align: center;
-  box-align: center;
-  align-items: center;
-  box-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  border-radius: 0;
-  color: #5f6368;
-  height: 100%;
-  min-width: 66px;
-
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-font-smoothing: antialiased;
-  -webkit-user-select: none;
-  transition: background 0.2s 0.1s;
-  border: 0;
-  cursor: pointer;
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.25px;
-  line-height: 36px;
-  text-decoration: none;
-  text-transform: none;
-  outline: none;
-  position: relative;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent;
-  z-index: 0;
-
-  &:hover {
-     background-color: transparent;
-    .tray-button-bg {
-      opacity: 0.04;
-    }
   }
 }
 

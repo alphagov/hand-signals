@@ -1,7 +1,11 @@
 <template>
-  <div class="tray-button-outer" tabindex="0" @keyup.enter="toggleDropdown" @keyup.esc="closeDropdown" @mouseleave="closeDropdown">
-    <a class="uArJ5e UQuaGc kCyAyd kW31ib foXzLb tray-button" tabindex="-1" aria-label="Open Nod settings" role="button">
-      <div class="e19J0b CeoRYc" @click.self="toggleDropdown"></div>
+    <button class="uArJ5e UQuaGc kCyAyd kW31ib foXzLb tray-button"
+      @click="toggleDropdown"
+      @keyup.enter="toggleDropdown" 
+      @keyup.esc="closeDropdown" 
+      @mouseleave="closeDropdown" 
+      aria-label="Open Nod settings" role="button"
+    >
       <span class="DPvwYc sm8sCf SX67K" aria-hidden="true">
         <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="Hdh4hc cIGbvc NMm5M">
           <path
@@ -11,8 +15,7 @@
         </svg>
       </span>
       <SettingsDropdown v-if="this.$store.state.settings" />
-    </a>
-  </div>
+    </button>
 </template>
 
 <script>
@@ -36,16 +39,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.tray-button-outer {
-  &:focus > .tray-button {
-    background-color: rgba(2, 191, 165, 0.15);
-  }
-}
-.tray-button {
-  display: flex;
-  overflow: visible !important;
-  padding: 0 10px;
-}
-</style>

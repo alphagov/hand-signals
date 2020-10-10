@@ -1,10 +1,12 @@
 <template>
-    <a 
-    class="uArJ5e UQuaGc kCyAyd kW31ib foXzLb tray-button minimise-btn" 
-    tabindex="0" aria-label="Minimise tray" role="button"
+    <button 
+    class="tray-button minimise-btn" 
+    aria-label="Minimise tray" 
+    role="button"
     v-bind:class="toggleIcon"
-    @keyup.enter="toggleTrayVisibility">
-      <div class="e19J0b CeoRYc" @click.self="toggleTrayVisibility"></div>
+    @keyup.enter="toggleTrayVisibility"
+    @click="toggleTrayVisibility"
+    >
       <svg style="display: none;">
         <symbol id="icon-circle-right" viewBox="0 0 32 32">
           <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z"></path>
@@ -19,7 +21,8 @@
         <svg class="icon icon-circle-left"><use xlink:href="#icon-circle-left"></use></svg>
         <svg class="icon icon-circle-right"><use xlink:href="#icon-circle-right"></use></svg>
       </span>
-    </a>
+      <span class="tooltiptext">Toggle signals (CTRL + M)</span>
+    </button>
 </template>
 
 <script>
@@ -41,7 +44,7 @@ export default {
   computed: {
     toggleIcon: function () {
       return this.$store.state.minimised ? 'minimise-btn--active' : ''
-    }
+    },
   }
 };
 </script>
@@ -79,5 +82,12 @@ export default {
       display: none;
     }
   }
+}
+.tooltiptext {
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: -55px;
+  left: 0;
 }
 </style>

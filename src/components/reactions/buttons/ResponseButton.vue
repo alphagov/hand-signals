@@ -1,11 +1,15 @@
 <template>
-  <div class="tray-button-outer" tabindex="0" @focus="closeDropdown" @keyup.enter="sendResponse()" @click="sendResponse()">
-    <a class="tray-button" tabindex="-1" aria-label="Respond to a point" role="button">
+    <button
+    @keyup.enter="sendResponse()"
+    @click="sendResponse()"
+    class="tray-button" 
+    aria-label="Respond to a point" 
+    role="button"
+    >
       <div class="tray-button-bg"></div>
       <img :src="getResponse" style="height: 32px;" alt="I want to respond"/>
-      <span class="tooltiptext">I want to respond</span>
-    </a>
-  </div>
+      <span class="tooltiptext">I want to respond (CTRL + R)</span>
+    </button>
 </template>
 
 <script>
@@ -28,8 +32,6 @@ export default {
   },
   methods: {
     sendResponse() {
-      // Close dropdown
-      this.$store.dispatch("closeDropdown", "reactions");
       //Generate id
       const id = generateUUID();
       // Send local version to store
@@ -56,23 +58,6 @@ export default {
         });
       }
     },
-    closeDropdown() {
-      this.$store.dispatch("closeDropdown", "reactions");
-    }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.tray-button-outer {
-  &:focus > .tray-button {
-    background-color: rgba(2, 191, 165, 0.15);
-  }
-}
-
-.tray-button {
-  display: flex;
-  overflow: visible !important;
-  padding: 0 10px;
-}
-</style>

@@ -1,10 +1,14 @@
 <template>
-  <div class="dropdown-outer" @click="sendMessage(emoji)" @keyup.enter="sendMessage(emoji)" tabindex="0" :aria-label="label" role="button">
-    <div class="dropdown-item" tabindex="-1" :class="{ faded: !canPost }">
-      <img class="emoji" :src="getEncoded" :alt="getLabel"/>
-      <span class="tooltiptext">{{ getLabel }}</span>
-    </div>
-  </div>
+  <button class="tray-button"
+    @click="sendMessage(emoji)" 
+    @keyup.enter="sendMessage(emoji)"
+    aria-label="label" 
+    role="button"
+    >
+    <div class="tray-button-bg"></div>
+    <img class="emoji" :src="getEncoded" :alt="getLabel" style="height: 32px; width: 32px;"/>
+    <span class="tooltiptext">{{ getLabel }}</span>
+  </button>
 </template>
 
 <script>
@@ -37,7 +41,6 @@ export default {
   },
   methods: {
     sendMessage(emoji) {
-      this.$store.dispatch("closeDropdown", "reactions");
       if (this.canPost) {
         this.$store.dispatch("addMessage", {
           messageId: generateUUID(),
@@ -63,58 +66,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dropdown-outer {
+.tray-button {
   flex-basis: 25%;
-  flex-shrink: 0;
-  &:focus > .dropdown-item {
-    background-color: rgba(2, 191, 165, 0.15);
-    outline: 4px solid rgb(2, 191, 165);
-  }
-}
-
-.dropdown-item {
-  padding: 10px 18px;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  border-radius: 8px;
-  margin: 3px;
-  &:hover {
-    background-color: #00796b0d;
-  }
-}
-
-.faded {
-  opacity: 0.3;
-  cursor: default;
-  &:hover {
-    background-color: white;
+  flex-shrink: 1;
+  &:focus,
+  &:hover{
+    background-color: rgb(219, 241, 237);
   }
 }
 
 .emoji {
   width: 100%;
-}
-
-.dropdown-item .tooltiptext {
-  visibility: hidden;
-  width: 200px;
-  background-color: #cdcdcd;
-  color: #000000;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  bottom: -70px;
-  left: 0%;
-}
-
-.dropdown-item:hover .tooltiptext {
-  visibility: visible;
 }
 </style>

@@ -11,7 +11,6 @@ export default new Vuex.Store({
     messages: [],
     hands: [],
     response: [],
-    reactions: false,
     settings: false,
     updateAvailable: false,
     updateChecked: false,

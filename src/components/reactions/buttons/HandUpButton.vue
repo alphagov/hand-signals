@@ -1,11 +1,15 @@
 <template>
-  <div class="tray-button-outer" tabindex="0" @focus="closeDropdown" @keyup.enter="sendHand()" @click="sendHand()">
-    <a class="tray-button" tabindex="-1" aria-label="Raise your hand" role="button">
-      <div class="tray-button-bg"></div>
-      <img :src="getHand" style="height: 32px;" alt="I want to speak"/>
-      <span class="tooltiptext">I want to speak</span>
-    </a>
-  </div>
+  <button 
+    @keyup.enter="sendHand()" 
+    @click="sendHand()"
+    class="tray-button" 
+    aria-label="Raise your hand" 
+    role="button"
+  >
+    <div class="tray-button-bg"></div>
+    <img :src="getHand" style="height: 32px;" alt="I want to speak"/>
+    <span class="tooltiptext">I want to speak (CTRL + H)</span>
+  </button>
 </template>
 
 <script>
@@ -28,8 +32,6 @@ export default {
   },
   methods: {
     sendHand() {
-      // Close dropdown
-      this.$store.dispatch("closeDropdown", "reactions");
       //Generate id
       const id = generateUUID();
       // Send local version to store
@@ -56,23 +58,6 @@ export default {
         });
       }
     },
-    closeDropdown() {
-      this.$store.dispatch("closeDropdown", "reactions");
-    }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.tray-button-outer {
-  &:focus > .tray-button {
-    background-color: rgba(2, 191, 165, 0.15);
-  }
-}
-
-.tray-button {
-  display: flex;
-  overflow: visible !important;
-  padding: 0 10px;
-}
-</style>

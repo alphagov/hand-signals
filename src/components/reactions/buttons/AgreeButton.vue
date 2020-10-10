@@ -1,11 +1,15 @@
 <template>
-  <div class="tray-button-outer" tabindex="0" @focus="closeDropdown" @click="sendMessage(emoji)" @keyup.enter="sendMessage(emoji)">
-    <a class="tray-button" tabindex="-1" aria-label="I agree" role="button">
-      <div class="tray-button-bg"></div>
-      <img :src="getAgree" style="height: 32px;" alt="I agree"/>
-      <span class="tooltiptext">I agree</span>
-    </a>
-  </div>
+  <button 
+    @click="sendMessage(emoji)"
+    @keyup.enter="sendMessage(emoji)"
+    class="tray-button" 
+    aria-label="I agree" 
+    role="button"
+  >
+    <div class="tray-button-bg"></div>
+    <img :src="getAgree" style="height: 32px;" alt="I agree"/>
+    <span class="tooltiptext">I agree (CTRL + A)</span>
+  </button>
 </template>
 
 <script>
@@ -37,7 +41,6 @@
   },
   methods: {
     sendMessage(emoji) {
-      this.$store.dispatch("closeDropdown", "reactions");
       if (this.canPost) {
         this.$store.dispatch("addMessage", {
           messageId: generateUUID(),
@@ -61,17 +64,3 @@
   },
 };
 </script>
-
-<style lang="scss" scoped>
-  .tray-button-outer {
-  &:focus > .tray-button {
-     background-color: rgba(2, 191, 165, 0.15);
-   }
-  }
-
-  .tray-button {
-    display: flex;
-    overflow: visible !important;
-    padding: 0 10px;
-  }
-</style>
