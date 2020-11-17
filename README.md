@@ -54,7 +54,7 @@ Hand signals enables us to continue using our team’s method of communication d
 - Click Load unpacked.
 - Find and select the `extension` folder inside the repo folder
 
-## Deloying the websocket
+## Deploying the websocket
 
 Install serverless with `npm i -g serverless`
 
