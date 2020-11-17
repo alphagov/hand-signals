@@ -2,7 +2,7 @@
 
 ![version](https://img.shields.io/chrome-web-store/v/npkagcojnlkccpdcgokfijkbhmlkglnl)
 ![version](https://img.shields.io/amo/v/hand-signals-for-google-meet)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/LeePorte/hand-signals)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/alphagov/hand-signals)
 
 Chrome and Firefox extension for Google Meet enabling Occupy hand signals.
 

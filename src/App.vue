@@ -65,7 +65,7 @@ export default {
 
       // Send console message
       console.log("%c Initialised Hand Signals Extension.", "background: #4D2F3C; color: #FBE2A0");
-      console.log("%c Something gone wrong? Let me know - https://github.com/LeePorte/hand-signals/issues", "background: #4D2F3C; color: #FBE2A0");
+      console.log("%c Something gone wrong? Let me know - https://github.com/alphagov/hand-signals/issues", "background: #4D2F3C; color: #FBE2A0");
 
       // Send ping to keep socket connection open
       const ping = () => {

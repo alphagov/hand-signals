@@ -11,7 +11,7 @@
     <div class="kCtYwe" role="separator"></div>
 
     <div class="dropdown-outer" tabindex="0" aria-label="Report an Issue" role="button">
-      <a href="https://github.com/LeePorte/hand-signals/issues" target="_blank" class="dropdown-item" tabindex="-1">
+      <a href="https://github.com/alphagov/hand-signals/issues" target="_blank" class="dropdown-item" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" class="settings-icon">
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M12 2.02c-5.51 0-9.98 4.47-9.98 9.98s4.47 9.98 9.98 9.98 9.98-4.47 9.98-9.98S17.51 2.02 12 2.02zM11.48 20v-6.26H8L13 4v6.26h3.35L11.48 20z" />
@@ -20,7 +20,7 @@
       </a>
     </div>
     <div class="dropdown-outer" tabindex="0" aria-label="Report an Issue" role="button" style="margin-bottom:5px;">
-      <a href="https://github.com/LeePorte/hand-signals/issues" target="_blank" class="dropdown-item" tabindex="-1">
+      <a href="https://github.com/alphagov/hand-signals/issues" target="_blank" class="dropdown-item" tabindex="-1">
         <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="settings-icon">
           <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17l-.59.59-.58.58V4h16v12z"></path>
           <path d="M11 12h2v2h-2zm0-6h2v4h-2z"></path>
