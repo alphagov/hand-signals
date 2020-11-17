@@ -57,7 +57,7 @@ Hand signals enables us to continue using our team’s method of communication d
 
 Install serverless with `npm i -g serverless`
 
-cd into the deploy/prod or deploy/dev derectory as appropriate then run
+cd into the deploy/prod or deploy/dev directory as appropriate and then run
 
 `gds aws re-development -- serverless`
 
