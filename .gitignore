@@ -96,8 +96,8 @@ web_modules/
 .vuepress/dist
 
 # Serverless directories
-.serverless/
-
+#.serverless/
+.serverless/Template.json
 # FuseBox cache
 .fusebox/
 
