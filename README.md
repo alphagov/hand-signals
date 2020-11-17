@@ -53,6 +53,14 @@ Hand signals enables us to continue using our team’s method of communication d
 4.  Push to the branch (`git push origin my-new-feature`)
 5.  Create new Pull Request
 
+## Deloying the websocket
+
+Install serverless with `npm i -g serverless`
+
+cd into the deploy/prod or deploy/dev derectory as appropriate then run
+
+`gds aws re-development -- serverless`
+
 ## Attributions  
 
 Forked from https://github.com/jamieecarr/nod and adapted to our non revenue generating needs
