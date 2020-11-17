@@ -45,13 +45,14 @@ As a member of GDS PaaS team we have used the [hand signals in person](https://g
 
 Hand signals enables us to continue using our team’s method of communication during meetings on Google Meet.
 
-## Contributing
-
-1.  Fork it
-2.  Create your feature branch (`git checkout -b my-new-feature`)
-3.  Commit your changes (`git commit -am 'Add some feature'`)
-4.  Push to the branch (`git push origin my-new-feature`)
-5.  Create new Pull Request
+## How to test the extension locally
+- checkout branch you want to test
+- run `npm install` (on first use)
+- run `npm run build`
+- Go to chrome://extensions/.
+- At the top right, turn on Developer mode.
+- Click Load unpacked.
+- Find and select the `extension` folder inside the repo folder
 
 ## Deloying the websocket
 
@@ -60,6 +61,14 @@ Install serverless with `npm i -g serverless`
 cd into the deploy/prod or deploy/dev directory as appropriate and then run
 
 `gds aws re-development -- serverless`
+
+## Contributing
+
+1.  Fork it
+2.  Create your feature branch (`git checkout -b my-new-feature`)
+3.  Commit your changes (`git commit -am 'Add some feature'`)
+4.  Push to the branch (`git push origin my-new-feature`)
+5.  Create new Pull Request
 
 ## Attributions  
 
