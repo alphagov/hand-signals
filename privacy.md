@@ -6,7 +6,7 @@ If you have any questions or concerns about our notice, or our practices with re
 
 If there are any terms in this privacy notice that you do not agree with, feel free to discontinue use of the extension or open an issue
 
-This privacy notice applies to all information collected through usage of the Hand Signals Chrome extension found at https://https://chrome.google.com/webstore/detail/hand-signals-hand-signals/npkagcojnlkccpdcgokfijkbhmlkglnl
+This privacy notice applies to all information collected through usage of the Hand Signals Chrome extension found at https://chrome.google.com/webstore/detail/hand-signals-hand-signals/npkagcojnlkccpdcgokfijkbhmlkglnl
 
 ---
 
