@@ -1,0 +1,7 @@
+{
+  "components": {
+    "connectionTable": "/home/leeporte/.serverless/components/registry/npm/@serverless/aws-dynamodb@4.0.0/node_modules/@serverless/aws-dynamodb",
+    "teamsTable": "/home/leeporte/.serverless/components/registry/npm/@serverless/aws-dynamodb@4.0.0/node_modules/@serverless/aws-dynamodb",
+    "websocketApi": "/home/leeporte/.serverless/components/registry/npm/@serverless/backend-socket@4.0.0/node_modules/@serverless/backend-socket"
+  }
+}

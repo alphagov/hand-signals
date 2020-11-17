@@ -1,0 +1,9 @@
+{
+  "region": "eu-west-2",
+  "url": "wss://4d6tqp68h8.execute-api.eu-west-2.amazonaws.com/dev/",
+  "routes": [
+    "$connect",
+    "$disconnect",
+    "$default"
+  ]
+}

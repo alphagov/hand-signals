@@ -1,0 +1,9 @@
+{
+  "name": "zua0j2j-byxzp17",
+  "arn": "arn:aws:iam::047890912354:role/zua0j2j-byxzp17",
+  "service": "lambda.amazonaws.com",
+  "policy": {
+    "arn": "arn:aws:iam::aws:policy/AdministratorAccess"
+  },
+  "region": "eu-west-2"
+}

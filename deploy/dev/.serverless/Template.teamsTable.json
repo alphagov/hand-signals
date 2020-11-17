@@ -1,0 +1,7 @@
+{
+  "lastDeployHadNameDefined": true,
+  "arn": "arn:aws:dynamodb:eu-west-2:047890912354:table/hand-signals-teams-dev",
+  "name": "hand-signals-teams-dev",
+  "region": "eu-west-2",
+  "delete": true
+}
