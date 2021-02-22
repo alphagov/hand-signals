@@ -23,7 +23,7 @@ export default {
   },
   created: function() {
     this.getData();
-    this.$options.sockets.onopen = (data) => {
+    this.$socket.onopen = (data) => {
       this.websocketInit();
       this.setupListeners();
     };

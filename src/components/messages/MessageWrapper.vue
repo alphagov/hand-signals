@@ -32,7 +32,7 @@ export default {
     }
   },
   created: function() {
-    this.$options.sockets.onmessage = ({ data }) => {
+    this.$socket.onmessage = ({ data }) => {
       const d = JSON.parse(data);
       switch (d.action) {
         case "MESSAGE":
