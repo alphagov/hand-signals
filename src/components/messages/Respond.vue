@@ -76,11 +76,6 @@ export default {
   margin-right: 10px;
 }
 
-.nod-emoji {
-  max-width: 26px;
-  transition: all 0.3s ease;
-}
-
 .nod-emoji-wrapper {
   border-radius: 50%;
   height: 40px;
@@ -95,4 +90,10 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px;
   overflow: hidden;
 }
+
+.nod-emoji {
+  width: 28px;
+  height: 28px;
+}
+
 </style>
