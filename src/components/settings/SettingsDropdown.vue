@@ -1,7 +1,5 @@
 <template>
   <div class="dropdown">
-    <SkinToneSelector />
-    <div class="kCtYwe" role="separator"></div>
     <NameDisplay />
     <div class="kCtYwe" role="separator"></div>
 
