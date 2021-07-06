@@ -6,37 +6,37 @@
     >
       <SettingsButton />
       <div class="divider"></div>
-      <ReactionsButton />
       <div class="divider"></div>
-      <ResponseButton />
+      <Reaction reaction='Agree' />
       <div class="divider"></div>
-      <HandUpButton />
+      <Reaction reaction='Disagree' />
       <div class="divider"></div>
-      <AgreeButton />
+      <Reaction reaction='Respond' />
       <div class="divider"></div>
-      <DisagreeButton />
+      <Reaction reaction='Clarify' />
+      <div class="divider"></div>
+      <Reaction reaction='Point of Order' />
+      <div class="divider"></div>
+      <Reaction reaction='Block' />
+      <div class="divider"></div>
+      <Reaction reaction='Oppose' />
     </div>
   </div>
 </template>
 
 <script>
+import Reaction from './buttons/Reaction.vue'
 import MinimiseButton from "./buttons/MinimiseButton";
-import HandUpButton from "./buttons/HandUpButton";
-import ResponseButton from "./buttons/ResponseButton";
-import ReactionsButton from "./buttons/ReactionsButton";
-import AgreeButton from "./buttons/AgreeButton";
-import DisagreeButton from "./buttons/DisagreeButton";
 import SettingsButton from "./buttons/SettingsButton";
 
 export default {
   components: {
+    Reaction,
     MinimiseButton,
-    HandUpButton,
-    ResponseButton,
-    ReactionsButton,
-    AgreeButton,
-    DisagreeButton,
     SettingsButton
+  },
+  props: {
+    reaction: String
   },
   computed: {
     trayOpen() {
@@ -85,6 +85,9 @@ export default {
   transition-duration: 0.25s;
   transition-property: transform border-radius;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  button:last-of-type {
+    margin-right: 8px;
+  }
 }
 .tray-inner--minimised{ 
   transform: translateX(-999px);
@@ -96,123 +99,34 @@ export default {
   width: 1px;
 }
 
-.tooltiptext {
-  visibility: hidden;
-  width: 200px;
-  background-color: #cdcdcd;
-  color: #000000;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  bottom: -55px;
-  left: 0%;
-}
-
 .open {
   border-radius: 0 0 8px;
 }
-
-.tray-button {
-  display: flex;
-  overflow: visible !important;
-  padding: 0 10px;
-
-  -webkit-box-align: center;
-  box-align: center;
-  align-items: center;
-  box-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  border-radius: 0;
-  color: #5f6368;
-  height: 100%;
-  min-width: 66px;
-
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-font-smoothing: antialiased;
-  -webkit-user-select: none;
-  transition: background 0.2s 0.1s;
+button {
+  appearance: none;
   border: 0;
-  cursor: pointer;
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.25px;
-  line-height: 36px;
-  text-decoration: none;
-  text-transform: none;
-  outline: none;
+  background: transparent;
+  padding: 8px 8px;
+  line-height: 1;
   position: relative;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent;
-  z-index: 0;
-
-  &:hover {
-    background-color: transparent;
-    .tray-button-bg {
-      opacity: 0.04;
-    }
-  }
-
-  &:hover .tooltiptext {
-    visibility: visible;
-  }
-}
-
-.dropdown-trigger-button {
-  display: flex;
-  overflow: visible !important;
-  padding: 0 10px;
-
-  -webkit-box-align: center;
-  box-align: center;
-  align-items: center;
-  box-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  border-radius: 0;
-  color: #5f6368;
-  height: 100%;
-  min-width: 66px;
-
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-font-smoothing: antialiased;
-  -webkit-user-select: none;
-  transition: background 0.2s 0.1s;
-  border: 0;
+  background: white;
   cursor: pointer;
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.25px;
-  line-height: 36px;
-  text-decoration: none;
-  text-transform: none;
-  outline: none;
-  position: relative;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent;
-  z-index: 0;
-
-  &:hover {
-     background-color: transparent;
-    .tray-button-bg {
-      opacity: 0.04;
-    }
+  &:hover,
+  &:focus {
+    background-color: rgb(219, 241, 237);
   }
 }
 
-.tray-button-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #00796b;
-  opacity: 0;
-}
+  button:hover .tooltip,
+  button:focus-visible .tooltip {
+    display: block;
+  }
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+  img {
+    width: 2.5em;
+    height: 2.5em;
+  }
 </style>
