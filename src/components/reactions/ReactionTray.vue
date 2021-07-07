@@ -67,6 +67,34 @@ export default {
   transition-property: opacity, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   border-radius: 0 0 8px;
+
+  button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 8px 8px;
+  line-height: 1;
+  position: relative;
+  background: white;
+  cursor: pointer;
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+  img {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  &:hover,
+  &:focus {
+    background-color: rgb(219, 241, 237);
+  }
+}
+
+  button:hover .tooltip,
+  button:focus-visible .tooltip {
+    display: block;
+  }
 }
 
 @keyframes fade {
@@ -102,31 +130,7 @@ export default {
 .open {
   border-radius: 0 0 8px;
 }
-button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 8px 8px;
-  line-height: 1;
-  position: relative;
-  background: white;
-  cursor: pointer;
-  &:hover,
-  &:focus {
-    background-color: rgb(219, 241, 237);
-  }
-}
 
-  button:hover .tooltip,
-  button:focus-visible .tooltip {
-    display: block;
-  }
-  svg {
-    width: 1em;
-    height: 1em;
-  }
-  img {
-    width: 2.5em;
-    height: 2.5em;
-  }
+
+  
 </style>
