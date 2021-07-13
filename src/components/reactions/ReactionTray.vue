@@ -6,6 +6,7 @@
     >
       <SettingsButton />
       <div class="divider"></div>
+      <Reaction reaction='Handup' />
       <div class="divider"></div>
       <Reaction reaction='Agree' />
       <div class="divider"></div>
