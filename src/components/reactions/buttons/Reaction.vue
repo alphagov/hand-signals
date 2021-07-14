@@ -73,8 +73,14 @@ export default {
 
       return {icon, text}
     },
-    canPost() {
+    canPostMessage() {
       return this.$store.state.messages.filter((h) => h.owner === true).length < 1;
+    },
+    canRaiseHand() {
+      return this.$store.state.hands.filter(h => h.owner === true).length < 1;
+    },
+    canRespond() {
+      return this.$store.state.response.filter(h => h.owner === true).length < 1;
     },
     getUsername() {
       if (this.$store.state.isFullName) {
@@ -86,25 +92,29 @@ export default {
   },
   methods: {
     sendMessage(reaction) {
+      const id = generateUUID()
 
       const reactionTypes = {}
       this.reaction ==='Respond' ? (
         reactionTypes.dispatchType = "addRespond",
-        reactionTypes.action = "RESPONDQUEUE"
+        reactionTypes.action = "RESPONDQUEUE",
+        reactionTypes.allowed = this.canRespond
       ): 
       this.reaction ==='Handup' ? (
         reactionTypes.dispatchType = "addHand",
-        reactionTypes.action = "HANDUPQUEUE"
+        reactionTypes.action = "QUEUEHAND",
+        reactionTypes.allowed = this.canRaiseHand
       ):
       (
         reactionTypes.dispatchType = "addMessage",
-        reactionTypes.action = "QUEUEHAND"
+        reactionTypes.action = "MESSAGE",
+        reactionTypes.allowed = this.canPostMessage
       )
 
       this.$store.dispatch("closeDropdown", "reactions");
-      if (this.canPost || this.$store.state.hands.filter(h => h.owner === true).length < 1) {
+      if (reactionTypes.allowed) {
         this.$store.dispatch(reactionTypes.dispatchType, {
-          messageId: generateUUID(),
+          messageId: id,
           encoded: reaction.icon,
           username: this.getUsername,
           img: this.$store.getters.getUser("avatar"),
@@ -115,8 +125,9 @@ export default {
           message: {
             id: this.$store.getters.getUser("meetingID"),
             encoded: reaction.icon,
-            username: this.getUsername,
+            username:  this.getUsername,
             img: this.$store.getters.getUser("avatar"),
+            messageId: id
           },
         });
       }
