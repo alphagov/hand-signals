@@ -18,6 +18,7 @@ export default new Vuex.Store({
     visible: true,
     minimised: false,
     isFullName: false,
+    isRaiseHandVisible: false,
   },
 
   getters: {
@@ -27,6 +28,7 @@ export default new Vuex.Store({
   },
 
   mutations: {
+
     addMessage(state, data) {
       state.messages.unshift(data);
     },
@@ -68,6 +70,10 @@ export default new Vuex.Store({
     },
     setFullName(state, boolean) {
       state.isFullName = boolean;
+    },
+    setRaiseHandVisibility(state, boolean) {
+      localStorage.setItem('isRaiseHandVisible', JSON.stringify(boolean)),   
+      state.isRaiseHandVisible = boolean;
     },
   },
 
@@ -118,6 +124,15 @@ export default new Vuex.Store({
     },
     setFullName(context, boolean) {
       context.commit("setFullName", boolean);
+    },
+    setRaiseHandVisibility(context, boolean) {
+      context.commit("setRaiseHandVisibility", boolean);
+    },
+    getRaiseHandVisibility(context) {
+      if(localStorage.getItem('isRaiseHandVisible') !== null) {
+        let visibility = JSON.parse(localStorage.getItem('isRaiseHandVisible'));
+        context.commit('setRaiseHandVisibility', visibility);
+      }
     },
   },
 });
