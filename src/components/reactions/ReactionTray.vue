@@ -6,7 +6,7 @@
     >
       <SettingsButton />
       <div class="divider"></div>
-      <Reaction reaction='Handup' />
+      <Reaction reaction='Handup' v-if="isRaiseHandVisible" />
       <div class="divider"></div>
       <Reaction reaction='Agree' />
       <div class="divider"></div>
@@ -40,6 +40,9 @@ export default {
     reaction: String
   },
   computed: {
+    isRaiseHandVisible () {
+      return this.$store.state.isRaiseHandVisible;
+    },
     trayOpen() {
       return this.$store.state.reactions || this.$store.state.settings;
     },
