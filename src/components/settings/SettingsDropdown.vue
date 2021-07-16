@@ -2,8 +2,10 @@
   <div class="dropdown">
     <NameDisplay />
     <div class="kCtYwe" role="separator"></div>
-
     <NotificationsButton />
+    <div class="kCtYwe" role="separator"></div>
+    <SetRaiseHandVisibility />
+    <div class="kCtYwe" role="separator"></div>
     <UpdateButton />
 
     <div class="kCtYwe" role="separator"></div>
@@ -34,12 +36,14 @@
 import NotificationsButton from "./NotificationsButton";
 import UpdateButton from "./UpdateButton";
 import NameDisplay from "./NameDisplay";
+import SetRaiseHandVisibility from "./SetRaiseHandVisibility";
 
 export default {
   components: {
     NotificationsButton,
     UpdateButton,
     NameDisplay,
+    SetRaiseHandVisibility,
   },
 };
 </script>

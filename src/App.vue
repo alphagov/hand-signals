@@ -23,6 +23,7 @@ export default {
   },
   created: function() {
     this.getData();
+    this.$store.dispatch('getRaiseHandVisibility');
     this.$socket.onopen = (data) => {
       this.websocketInit();
       this.setupListeners();

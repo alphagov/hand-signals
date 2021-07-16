@@ -1,11 +1,10 @@
 <template>
+<div @mouseleave="closeDropdown" class="tray-button-outer">
   <button 
-    class="tray-button-outer" 
     tabindex="0" 
     @keyup.enter="toggleDropdown" 
     @keyup.esc="closeDropdown" 
-    @click="toggleDropdown" 
-    @mouseleave="closeDropdown"
+    @click="toggleDropdown"
     >
       <span class="DPvwYc sm8sCf SX67K" aria-hidden="true">
         <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="Hdh4hc cIGbvc NMm5M">
@@ -15,8 +14,9 @@
           <circle cx="12" cy="12" r="3.5" />
         </svg>
       </span>
-      <SettingsDropdown v-if="this.$store.state.settings" />
-  </button>
+    </button>
+    <SettingsDropdown v-if="this.$store.state.settings" />
+    </div>
 </template>
 
 <script>
@@ -40,3 +40,11 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.tray-button-outer {
+  display: flex;
+  button:last-of-type {
+    margin-right: 0;
+  } 
+}
+</style>
