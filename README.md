@@ -16,15 +16,15 @@ Chrome and Firefox extension for Google Meet enabling Occupy hand signals.
 
 ## Images of the plugin
 
-![](img/readme/reaction-out.png)
+![](img/readme/full-screenshot.jpg)
 
 All the Occupy Hand Signals are available
 
-![](img/readme/reaction-in.png)
+![](img/readme/signal-bar.png)
 
 Unobtrusive when you aren't interacting with it
 
-![](img/readme/action.png)
+![](img/readme/signals-in-queue.jpg)
 
 Overlays the feed from your team on the video call
 
