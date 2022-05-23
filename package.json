@@ -1,6 +1,6 @@
 {
   "name": "handsignals",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "scripts": {
     "watch": "vue-cli-service build --dest extension/dist --watch",
