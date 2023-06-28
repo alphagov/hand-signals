@@ -1,4 +1,8 @@
-# Occupy hand signals for Google Meet
+# Notice of decommission
+
+We aim to decommission this extension by the end of 2023.
+
+## Occupy hand signals for Google Meet
 
 ![version](https://img.shields.io/chrome-web-store/v/npkagcojnlkccpdcgokfijkbhmlkglnl)
 ![version](https://img.shields.io/amo/v/hand-signals-for-google-meet)
