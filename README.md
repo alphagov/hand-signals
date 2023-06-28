@@ -14,8 +14,6 @@ Chrome and Firefox extension for Google Meet enabling Occupy hand signals.
 
 ## Install
 
-[Install from Chrome Store](https://chrome.google.com/webstore/detail/hand-signals-hand-signals/npkagcojnlkccpdcgokfijkbhmlkglnl)
-
 [Install from Mozilla Addons](https://addons.mozilla.org/en-GB/firefox/addon/hand-signals-for-google-meet/)
 
 ## Images of the plugin
