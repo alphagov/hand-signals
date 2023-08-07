@@ -4,17 +4,9 @@ We aim to decommission this extension by the end of 2023.
 
 ## Occupy hand signals for Google Meet
 
-![version](https://img.shields.io/chrome-web-store/v/npkagcojnlkccpdcgokfijkbhmlkglnl)
-![version](https://img.shields.io/amo/v/hand-signals-for-google-meet)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/alphagov/hand-signals)
-
 Chrome and Firefox extension for Google Meet enabling Occupy hand signals.
 
 ---
-
-## Install
-
-[Install from Mozilla Addons](https://addons.mozilla.org/en-GB/firefox/addon/hand-signals-for-google-meet/)
 
 ## Images of the plugin
 
